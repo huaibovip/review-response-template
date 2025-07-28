@@ -20,14 +20,12 @@
 }
 \journal{IEEE Transactions on Medical Imaging}
 \manuscript{TMI-2025-X}
-\editorname{Dr. Editors}
 
+
+%% Main
 \begin{document}
+
 \maketitle
-
-
-% Cover Letter
-\input{cover_letter.tex}
 
 
 % Contents
@@ -35,7 +33,7 @@
 \tableofcontents
 
 
-% Response to Editor
+%% Response to Editor
 \editor
 \begin{generalcomment}
 	The reviewer(s) have suggested some minor revisions to your manuscript. Therefore, I invite you to respond to the reviewer(s)' comments and revise your manuscript.
@@ -51,10 +49,12 @@
 % 	Thank you for your valuable comments on our manuscript.
 % 	We have done our best to incorporate changes to reflect the suggestions, which allowed us to improve the quality of our work.
 % \end{concludingresponse}
+%%
 
 
-% Reviewer 1
+%% Reviewer 1
 \reviewer
+\label{rev:1}
 \begin{generalcomment}
 	General comment about the work.
 \end{generalcomment}
@@ -79,13 +79,13 @@
 		This really important sentence was added to the paper.
 	\end{changes}
 \end{revresponse}
-
 % \begin{concludingresponse}[]
 % 	Thank you for your valuable comments on our manuscript.
 % \end{concludingresponse}
+%%
 
 
-% Reviewer 2
+%% Reviewer 2
 \reviewer
 \label{rev:2}
 \begin{generalcomment}
@@ -110,14 +110,17 @@
 	Therefore, we added reference \cite{ReviewerReference}.
 
 	Also check out our article \cite{Besser2020}.
-	
+
 	And btw, your \autoref{comment:work-not-good} was mean! (We can use the \verb|\autoref| command.)
-	
+
 	\printpartbibliography{ReviewerReference,Besser2020}
 \end{revresponse}
+%%
 
 
+%% Reviewer 3
 \reviewer
+\label{rev:3}
 \begin{generalcomment}
 	General comment about the work.
 \end{generalcomment}
@@ -138,5 +141,7 @@
 
 	\printpartbibliography{Besser2021,ReviewerReference}
 \end{revresponse}
+%%
 
 \end{document}
+%%

@@ -14,6 +14,7 @@
 
 \RequirePackage[breakable,skins]{tcolorbox}
 \RequirePackage{xcolor}
+\RequirePackage{dashrule}
 
 \RequirePackage{hyperref}
 \hypersetup{colorlinks=true,linkcolor=black}
@@ -21,8 +22,6 @@
 
 \newcommand*{\journal}[1]{\renewcommand*{\@journal}{#1}}
 \newcommand*{\@journal}{}
-\newcommand*{\editorname}[1]{\renewcommand*{\@editorname}{#1}}
-\newcommand*{\@editorname}{}
 \newcommand*{\manuscript}[1]{\renewcommand*{\@manuscript}{#1}}
 \newcommand*{\@manuscript}{}
 \newcommand*{\affiliation}[1]{\renewcommand*{\@affiliation}{#1}}
@@ -31,7 +30,6 @@
 
 \newcommand*{\printtitle}{\@title}
 \newcommand*{\printdate}{\@date}
-\newcommand*{\printeditor}{\@editorname}
 \newcommand*{\printmanuscript}{\@manuscript}
 \newcommand*{\printauthor}{\begingroup\renewcommand*{\affil}[1]{\@bsphack\@esphack}\@author\endgroup}
 
@@ -89,30 +87,25 @@
 %%% Commands
 \renewcommand*{\maketitle}{%
 	\begin{titlepage}
-		\begin{center}
-			\singlespacing
-			\large
-			\vspace*{1cm}
-			{Responses to Reviewers' Comments for Manuscript \@manuscript}
+		% \vspace*{1cm}
+		{\Large\textbf{Point-by-Point Responses to Review Comments}}
+		
+		\vspace{2ex}
+		{\textbf{Paper Title:} \@title}\\[2ex]
+		{\textbf{Manuscript ID:} \@manuscript}\\[2ex]
+		{\textbf{Authors:} \@author}\\[2ex]
+		{\textbf{Submitted to:} \@journal}\\[2ex]
+		\vspace{2ex}
+		{\small\begin{tabular}{%
+			@{}l@{}}\@affiliation
+		\end{tabular}}
 
-			\vspace{5ex}
+		\vspace{2ex}
+		\hdashrule{\textwidth}{0.4pt}{3pt}
+		\vspace{2ex}
 
-			{\LARGE\textbf{\@title}}
-
-			\vspace{5ex}
-
-			{Addressed Comments for Publication to}\\[2ex]
-			{\Large\@journal}\\[2ex]
-			{by}\\[1.5ex]
-			{\@author}
-
-			\vspace{1.25ex}
-
-			{\small%
-			\begin{tabular}{@{}l@{}}
-				\@affiliation
-			\end{tabular}}
-		\end{center}
+		% Cover Letter
+		\input{cover_letter.tex}
 	\end{titlepage}
 }
 
