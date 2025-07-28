@@ -4,36 +4,36 @@
 \usepackage{babel}
 \usepackage[babel]{microtype}
 \usepackage[babel]{csquotes}
-
-%% Fonts
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-%\usepackage{newcent} % different font
-%\usepackage[scaled]{beramono} % different monospace font
-
+\usepackage{hyperref}
 
 %% Bibliography
 \usepackage[backend=biber,style=ieee,dashed=false,url=false,isbn=false,defernumbers=true,refsection=section]{biblatex}
 \bibliography{literature.bib}
 
-\usepackage{hyperref}
-
 
 \title{My Awesome Paper Title}
-\author{Donald Duck\affil{1,*} and Mickey Mouse\affil{2}}
+\author{Author A\affil{1,*}, Author B\affil{2} and Author C\affil{3}}
 \affiliation{
-	\affil{1} Department of Quacking, Duck University, Duckburg, USA\\
-	\affil{2} Department of Mousing, Mouse University, Mouseton, USA
+	\affil{1} School of Optics and Photonics, Beijing Institute of Technology, Beijing, China\\
+	\affil{2} School of Medical Technology, Beijing Institute of Technology, Beijing, China\\
+	\affil{3} School of Computer Science and Technology, Beijing Institute of Technology, Beijing, China
 }
-\journal{IEEE Transactions on Wireless Communications}
-\manuscript{TWC-2020-X}
-\editorname{Dr. Doom}
+\journal{IEEE Transactions on Medical Imaging}
+\manuscript{TMI-2025-X}
+\editorname{Dr. Editors}
 
 \begin{document}
 \maketitle
 
+
 % Cover Letter
 \input{cover_letter.tex}
+
+
+% Contents
+\newpage
+\tableofcontents
+
 
 % Response to Editor
 \editor
@@ -47,10 +47,10 @@
 		\item We removed our wrong statements in Section~I.
 	\end{enumerate}
 \end{revresponse}
-\begin{concludingresponse}[to the Editor]
-	Thank you for your valuable comments on our manuscript. 
-	We have done our best to incorporate changes to reflect the suggestions, which allowed us to improve the quality of our work.
-\end{concludingresponse}
+% \begin{concludingresponse}[to the Editor]
+% 	Thank you for your valuable comments on our manuscript.
+% 	We have done our best to incorporate changes to reflect the suggestions, which allowed us to improve the quality of our work.
+% \end{concludingresponse}
 
 
 % Reviewer 1
@@ -80,9 +80,10 @@
 	\end{changes}
 \end{revresponse}
 
-\begin{concludingresponse}[]
-	Thank you for your valuable comments on our manuscript. 
-\end{concludingresponse}
+% \begin{concludingresponse}[]
+% 	Thank you for your valuable comments on our manuscript.
+% \end{concludingresponse}
+
 
 % Reviewer 2
 \reviewer
@@ -107,27 +108,35 @@
 \begin{revresponse}
 	We are aware that citations on Google Scholar are very important to you.
 	Therefore, we added reference \cite{ReviewerReference}.
-	
+
 	Also check out our article \cite{Besser2020}.
 	
-	\printpartbibliography{ReviewerReference,Besser2020}
-	
 	And btw, your \autoref{comment:work-not-good} was mean! (We can use the \verb|\autoref| command.)
+	
+	\printpartbibliography{ReviewerReference,Besser2020}
 \end{revresponse}
 
 
 \reviewer
+\begin{generalcomment}
+	General comment about the work.
+\end{generalcomment}
+\begin{revresponse}[Thank you for your feedback.]
+	We have carefully addressed all the issues item by item as follows.
+\end{revresponse}
+
 \begin{revcomment}
 	Did you know, that the references can be separated for the individual reviewers?
 \end{revcomment}
 \begin{revresponse}
 	Yes. When using \href{https://www.ctan.org/pkg/biblatex}{biblatex}, you can use the \texttt{refsection=section} option to achieve that.
 	If we cite a new reference like \cite{Besser2021} here, it will again be number [1].
-	
+
 	Note that you might have to run \texttt{pdflatex} and \texttt{biber} multiple times.
-	
+
 	And reference [1] for \autoref{rev:2}~\cite{ReviewerReference} is now number [2].
-	
+
 	\printpartbibliography{Besser2021,ReviewerReference}
 \end{revresponse}
+
 \end{document}

@@ -138,14 +138,14 @@
 %%%
 
 %%% Blocks %%%
-\newenvironment{generalcomment}{
-    % \addcontentsline{toc}{subsection}{General Comments} % add to contents
-	\begin{tcolorbox}[adjusted title={General Comments}, fonttitle={\bfseries}, coltitle={colorcommentbg}, colback={colorcommentbg}, colframe={colorcommentframe}, bookmark={General Comments}]
+\newenvironment{generalcomment}{%
+	% \addcontentsline{toc}{subsection}{General Comments} % add to contents
+	\begin{tcolorbox}[attach title to upper, title={General Comments}, after title={.\enskip}, fonttitle={\bfseries}, coltitle={colorcommentfg}, colback={colorcommentbg}, colframe={colorcommentframe}, bookmark={General Comments}]
 	}{\end{tcolorbox}}
 
 \newenvironment{revcomment}[1][]{\refstepcounter{revcomment}
     % \addcontentsline{toc}{subsection}{Comment \arabic{revcomment}} % add to contents
-	\begin{tcolorbox}[attach title to upper, title={Comment \arabic{revcomment}}, after title={.\enskip}, fonttitle={\bfseries}, coltitle={colorcommentfg}, colback={colorcommentbg}, colframe={colorcommentframe}, bookmark={Comment \arabic{revcomment}},#1]
+	\begin{tcolorbox}[adjusted title={Comment \arabic{revcomment}}, fonttitle={\bfseries}, coltitle={colorcommentbg}, colback={colorcommentbg}, colframe={colorcommentframe}, bookmark={Comment \arabic{revcomment}},#1]
 	}{\end{tcolorbox}}
 
 \newenvironment{revresponse}[1][{Thank you for the comment.}]{%
