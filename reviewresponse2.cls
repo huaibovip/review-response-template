@@ -44,6 +44,10 @@
 \colorlet{colorconcludingresponsefg}{black!80}
 \colorlet{colorconcludingresponsebg}{black!2}
 \colorlet{colorconcludingresponseframe}{black!20}
+
+\definecolor{colorrevfg}{RGB}{30,144,255}
+% \definecolor{colorrevfg}{RGB}{0,191,255}
+\definecolor{colorrevbg}{RGB}{135,206,250}
 %%%
 
 %%% General Settings
@@ -128,6 +132,8 @@
 		\phantomsection
 		\printbibliography[heading=none,segment=\therefsegment]
 	\end{refsegment}}
+
+\newcommand{\rev}[1]{\textcolor{colorrevfg}{#1}}
 %%%
 
 %%% Blocks %%%
